@@ -9,7 +9,8 @@ import SwiftUI
 import AVKit
 
 struct VideoView: View {
-    var animals: [Animal] = Bundle.main.decode("vidoes.json");
+   
+    
     var body: some View {
         VStack {
             VideoPlayer(player: playUrlVideo(file: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", type: "mp4"))

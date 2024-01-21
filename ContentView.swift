@@ -5,17 +5,12 @@ import AVKit
 struct ContentView: View {
     // MARK: - PROPERTIES
     @State private var showSheet: Bool = false;
+    var animals: [Animal] = Bundle.main.decode("vidoes.json");
     
     // MARK: - BODY
     var body: some View {
         NavigationView {
             List {
-                NavigationLink(destination: VideoView()) {
-                    HStack {
-                        Text("Cheetah Video")
-                        
-                    }//: HSTACK
-                }//: NAVIGATIONLINK
                 
                 
             }//: VSTACK
