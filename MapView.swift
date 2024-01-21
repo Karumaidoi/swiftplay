@@ -56,7 +56,17 @@ struct MapView: View {
                         
                     }//: VSTACK
                 }
+                    .padding(.vertical, 12)
+                                    .padding(.horizontal, 12)
+                                    .background(
+                                        Color.black
+                                            .cornerRadius(8)
+                                            .opacity(0.6)
+                                    )
+                                    .padding()
+                , alignment: .top
             )
+           
     }
 }
 
