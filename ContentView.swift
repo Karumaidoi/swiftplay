@@ -5,13 +5,15 @@ import AVKit
 struct ContentView: View {
     // MARK: - PROPERTIES
     @State private var showSheet: Bool = false;
-    var animals: [Animal] = Bundle.main.decode("vidoes.json");
+    let animals: [Animal] = Bundle.main.decode("videos.json");
     
     // MARK: - BODY
     var body: some View {
         NavigationView {
             List {
-                
+                ForEach(animals, id:\.title) { animal in
+                    /*@START_MENU_TOKEN@*/Text(animal.title)/*@END_MENU_TOKEN@*/
+                }
                 
             }//: VSTACK
             .sheet(isPresented: $showSheet) {

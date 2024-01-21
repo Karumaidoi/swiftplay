@@ -8,24 +8,27 @@
 import Foundation
 
 extension Bundle {
-    // Where T is generic type - It can decode any json data
-    func decode<T: Codable>(_ file:String) -> T {
-        // Locating The JSON File
+    // The <T:Codable> is to allow work with Generics. They help us work with all types
+    func decode<T: Codable>(_ file: String) ->  T {
+        //1. Locate the json data
         guard let url = self.url(forResource: file, withExtension: nil) else {
-            fatalError("Unable to locate json")
+            fatalError("Unable to get the bundle");
         }
         
+        //2. Create the propery for the data
         guard let data = try? Data(contentsOf: url) else {
-            fatalError("No data from the URL")
+            fatalError("Failed to load from data");
         }
         
+        //3. Create JSON Decode
         let decoder = JSONDecoder();
         
-        // Decode the data
+        //4. Decode data and collect the info
         guard let loaded = try? decoder.decode(T.self, from: data) else {
-            fatalError("Unable to decode json")
+            fatalError("Failed to decode data from bundle");
         }
         
+        //5. Return ready to use data
         return loaded;
     }
 }
