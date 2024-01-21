@@ -18,54 +18,58 @@ struct MapView: View {
     }();
     
     var body: some View {
-        Map(coordinateRegion: $region)
-            .overlay(
-                HStack(alignment: .center, spacing: 12) {
-                    Image(systemName: "compass")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 48, height: 48, alignment: .center)
-                    
-                    VStack(alignment: .center, spacing:3) {
-                        HStack {
-                            Text("Latitude")
-                                .font(.footnote)
-                                .fontWeight(.bold)
-                                .foregroundColor(.accentColor)
-                            Spacer()
+        NavigationView {
+            Map(coordinateRegion: $region)
+                .overlay(
+                    HStack(alignment: .center, spacing: 12) {
+                        Image(systemName: "compass")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 48, height: 48, alignment: .center)
+                        
+                        VStack(alignment: .center, spacing:3) {
+                            HStack {
+                                Text("Latitude")
+                                    .font(.footnote)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.accentColor)
+                                Spacer()
+                                
+                                Text("\(region.center.latitude)")
+                                    .font(.footnote)
+                                    .foregroundColor(.white)
+                            }//: HSTACK
                             
-                            Text("\(region.center.latitude)")
-                                .font(.footnote)
-                                .foregroundColor(.white)
-                        }//: HSTACK
-                        
-                        Divider()
-                        
-                        HStack {
-                            Text("Longitude")
-                                .font(.footnote)
-                                .fontWeight(.bold)
-                                .foregroundColor(.accentColor)
-                            Spacer()
+                            Divider()
                             
-                            Text("\(region.center.longitude)")
-                                .font(.footnote)
-                                .foregroundColor(.white)
-                        }//: HSTACK
-                        
-                        
-                    }//: VSTACK
-                }
-                    .padding(.vertical, 12)
-                                    .padding(.horizontal, 12)
-                                    .background(
-                                        Color.black
-                                            .cornerRadius(8)
-                                            .opacity(0.6)
-                                    )
-                                    .padding()
-                , alignment: .top
-            )
+                            HStack {
+                                Text("Longitude")
+                                    .font(.footnote)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.accentColor)
+                                Spacer()
+                                
+                                Text("\(region.center.longitude)")
+                                    .font(.footnote)
+                                    .foregroundColor(.white)
+                            }//: HSTACK
+                            
+                            
+                        }//: VSTACK
+                    }
+                        .padding(.vertical, 12)
+                                        .padding(.horizontal, 12)
+                                        .background(
+                                            Color.black
+                                                .cornerRadius(8)
+                                                .opacity(0.6)
+                                        )
+                                        .padding()
+                    , alignment: .top
+                )
+                .navigationBarTitle("Map", displayMode: .inline)
+        }
+      
            
     }
 }
