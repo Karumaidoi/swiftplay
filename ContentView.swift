@@ -12,7 +12,9 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(animals) { animal in
-                    Text(animal.name)
+                    NavigationLink(destination: VideoView(url: animal.sources[0])) {
+                        Text(animal.name)
+                    }
                 }
                 
             }//: VSTACK

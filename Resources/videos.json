@@ -32,7 +32,8 @@
   {
     "id" : "lioness",
     "name" : "Lioness",
-    "headline" : "African lioness slowly walking on the African savannah"
+    "headline" : "African lioness slowly walking on the African savannah",
+    "sources" : [ "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4" ],
   },
  
 ]
