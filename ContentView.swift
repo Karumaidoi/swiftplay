@@ -9,8 +9,14 @@ struct ContentView: View {
     // MARK: - BODY
     var body: some View {
         NavigationView {
-            VStack {
-                VideoPlayer(player: playVideo(file: "cheetah", type: "mp4"))
+            List {
+                NavigationLink(destination: Text("Hola")) {
+                    HStack {
+                        Text("Cheetah Video")
+                        
+                    }//: HSTACK
+                }//: NAVIGATIONLINK
+                
                 
             }//: VSTACK
             .sheet(isPresented: $showSheet) {
