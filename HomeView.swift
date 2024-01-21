@@ -10,15 +10,14 @@ import SwiftUI
 @available(iOS 16.0, *)
 struct HomeView: View {
     // MARK: - PROPERTIES
+    @EnvironmentObject var viewModel: AnimalStateData
     @State private var showSheet: Bool = false;
-    @State private var animals: [Animal] = Bundle.main.decode("videos.json");
-
     // MARK: - BODY
     var body: some View {
         NavigationView {
             List {
-                ForEach(animals) { animal in
-                    NavigationLink(destination: VideoView(url: animal.sources[0])) {
+                ForEach(viewModel.animalsData) { animal in
+                    NavigationLink(destination: VideoView( animal: animal)) {
                         Text(animal.name)
                     }
                 }
@@ -43,7 +42,8 @@ struct HomeView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
                         // Code to shuffle animals
-                        self.animals = animals.shuffled();
+//                        self.animals = animals.shuffled();
+                        viewModel.shuffledata();
                     } label: {
                         Image(systemName: "arrow.2.squarepath")
                             .resizable()

@@ -9,15 +9,29 @@ import SwiftUI
 import AVKit
 
 struct VideoView: View {
-    var url: String?
+    @EnvironmentObject var viewModel : AnimalStateData
+    @Environment(\.presentationMode) var presentationMode
+    
+    var animal: Animal
+    
     
     var body: some View {
         
         VStack {
-            VideoPlayer(player: playUrlVideo(file: url!, type: "mp4"))
+            VideoPlayer(player: playUrlVideo(file: animal.sources.first!, type: "mp4"))
         }//: VSTACK
         .foregroundColor(.accentColor)
-        .navigationBarTitle("Cheeetah", displayMode: .large)
+        .navigationBarTitle(animal.name, displayMode: .large)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    viewModel.removeAnimal(animal: animal);
+                    presentationMode.wrappedValue.dismiss();
+                } label: {
+                    Image(systemName: "trash")
+                }
+            }
+        }
         }
 }
 
