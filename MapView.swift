@@ -22,7 +22,7 @@ struct MapView: View {
             Map(coordinateRegion: $region)
                 .overlay(
                     HStack(alignment: .center, spacing: 12) {
-                        Image(systemName: "compass")
+                        Image(systemName: "safari")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 48, height: 48, alignment: .center)
