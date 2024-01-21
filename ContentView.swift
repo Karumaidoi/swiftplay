@@ -10,7 +10,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                NavigationLink(destination: Text("Hola")) {
+                NavigationLink(destination: VideoView()) {
                     HStack {
                         Text("Cheetah Video")
                         
