@@ -14,7 +14,7 @@ struct VideoView: View {
     var body: some View {
         
         VStack {
-            VideoPlayer(player: playUrlVideo(file: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", type: "mp4"))
+            VideoPlayer(player: playUrlVideo(file: url!, type: "mp4"))
         }//: VSTACK
         .foregroundColor(.accentColor)
         .navigationBarTitle("Cheeetah", displayMode: .large)
