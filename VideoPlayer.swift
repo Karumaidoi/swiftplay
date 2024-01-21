@@ -20,6 +20,7 @@ func playVideo(file: String, type: String) -> AVPlayer {
 }
 
 func playUrlVideo(file: String, type: String) -> AVPlayer {
+    print(file);
     guard let url = URL(string: file) else {
         fatalError("Unable to get the URL");
     }
