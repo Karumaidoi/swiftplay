@@ -10,7 +10,7 @@ import AVKit
 
 struct VideoView: View {
     var body: some View {
-        VideoPlayer(player: playVideo(file: "cheetah", type: "mp4"))
+        VideoPlayer(player: playUrlVideo(file: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", type: "mp4"))
     }
 }
 

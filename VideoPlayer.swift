@@ -18,3 +18,15 @@ func playVideo(file: String, type: String) -> AVPlayer {
     
     return videoPlayer!;
 }
+
+func playUrlVideo(file: String, type: String) -> AVPlayer {
+    guard let url = URL(string: file) else {
+        fatalError("Unable to get the URL");
+    }
+    
+    videoPlayer = AVPlayer(url: url);
+    
+    videoPlayer?.play();
+    
+    return videoPlayer!;
+}
