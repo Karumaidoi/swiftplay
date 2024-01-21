@@ -11,7 +11,7 @@ import SwiftUI
 struct HomeView: View {
     // MARK: - PROPERTIES
     @State private var showSheet: Bool = false;
-    let animals: [Animal] = Bundle.main.decode("videos.json");
+    @State private var animals: [Animal] = Bundle.main.decode("videos.json");
 
     // MARK: - BODY
     var body: some View {
@@ -36,6 +36,18 @@ struct HomeView: View {
                         self.showSheet.toggle();
                     } label: {
                         Image(systemName: "paintbrush")
+                            .foregroundColor(.accentColor)
+                    }
+                }//: TOOLBARITEM
+                
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        // Code to shuffle animals
+                        self.animals = animals.shuffled();
+                    } label: {
+                        Image(systemName: "arrow.2.squarepath")
+                            .resizable()
+                            .scaledToFit()
                             .foregroundColor(.accentColor)
                     }
                 }
