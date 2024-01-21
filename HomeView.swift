@@ -15,30 +15,33 @@ struct HomeView: View {
 
     // MARK: - BODY
     var body: some View {
-        List {
-            ForEach(animals) { animal in
-                NavigationLink(destination: VideoView(url: animal.sources[0])) {
-                    Text(animal.name)
+        NavigationView {
+            List {
+                ForEach(animals) { animal in
+                    NavigationLink(destination: VideoView(url: animal.sources[0])) {
+                        Text(animal.name)
+                    }
+                }
+                
+            }//: VSTACK
+            .sheet(isPresented: $showSheet) {
+                SheetView()
+                    .presentationDragIndicator(.visible)
+                    .presentationDetents([.large])
+            }
+            .navigationBarTitle("Chats", displayMode: .large)
+            .toolbar {
+                ToolbarItem(placement:.navigationBarTrailing) {
+                    Button {
+                        self.showSheet.toggle();
+                    } label: {
+                        Image(systemName: "paintbrush")
+                            .foregroundColor(.accentColor)
+                    }
                 }
             }
-            
-        }//: VSTACK
-        .sheet(isPresented: $showSheet) {
-            SheetView()
-                .presentationDragIndicator(.visible)
-                .presentationDetents([.large])
         }
-        .navigationBarTitle("Chats", displayMode: .large)
-        .toolbar {
-            ToolbarItem(placement:.navigationBarTrailing) {
-                Button {
-                    self.showSheet.toggle();
-                } label: {
-                    Image(systemName: "paintbrush")
-                        .foregroundColor(.accentColor)
-                }
-            }
-        }
+        
     }
 }
 
