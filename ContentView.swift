@@ -1,4 +1,5 @@
 import SwiftUI
+import AVKit
 
 @available(iOS 16.0, *)
 struct ContentView: View {
@@ -9,6 +10,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
+                VideoPlayer(player: playVideo(file: "cheetah", type: "mp4"))
                 
             }//: VSTACK
             .sheet(isPresented: $showSheet) {
