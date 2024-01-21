@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct Animal: Codable {
-    let title: String
-    let description: String
+struct Animal: Codable, Identifiable {
+    let id: String
+    let name: String
+    let headline: String
     let sources: [String]
     
     

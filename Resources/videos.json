@@ -1,0 +1,38 @@
+[
+  {
+    "id" : "cheetah",
+    "name" : "Cheetah",
+    "headline" : "Cheetah walking in the savannah",
+    "sources" : [ "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" ],
+  },
+  {
+    "id" : "elephant",
+    "name" : "Elephant",
+    "headline" : "African elephant with calf walking",
+    "sources" : [ "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" ],
+  },
+  {
+    "id" : "giraffe",
+    "name" : "Giraffe",
+    "headline" : "Lonely giraffe walking in the savannah",
+    "sources" : [ "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" ],
+  },
+  {
+    "id" : "gorilla",
+    "name" : "Gorilla",
+    "headline" : "Western lowland adult gorilla walking",
+    "sources" : [ "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" ],
+  },
+  {
+    "id" : "hippo",
+    "name" : "Hippo",
+    "headline" : "A cow hippo and her calf together in the water",
+    "sources" : [ "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4" ],
+  },
+  {
+    "id" : "lioness",
+    "name" : "Lioness",
+    "headline" : "African lioness slowly walking on the African savannah"
+  },
+ 
+]

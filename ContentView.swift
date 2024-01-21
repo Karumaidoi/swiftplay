@@ -11,8 +11,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(animals, id:\.title) { animal in
-                    /*@START_MENU_TOKEN@*/Text(animal.title)/*@END_MENU_TOKEN@*/
+                ForEach(animals) { animal in
+                    Text(animal.name)
                 }
                 
             }//: VSTACK
